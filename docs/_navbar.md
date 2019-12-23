@@ -1,2 +1,2 @@
-* [main](/)
-* [nodejs](/nodejs/)
+- Tips类别
+  - [nodejs](/nodejs/intro.md)
