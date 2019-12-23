@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSCON专栏﹒前端Tips</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  
+</head>
+<style>
+  section.cover h1{
+      margin-top: 50px;
+      margin-bottom: 10px;
+  }
+  section.cover .cover-main ul{
+    text-align: left;
+  }
+  section.cover .cover-main blockquote{
+    text-align: left;
+  }
+  section.cover .cover-main ul li{
+    list-style-type: disc;
+    margin-left: 80px;
+  }
+
+  /* spin loading */
+.lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid #42b983;
+  border-color: #42b983 transparent #42b983 transparent;
+  animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+</style>
+<body>
+  <div id="app"><div class="lds-hourglass"></div></div>
+  <script>
+    window.$docsify = {
+      coverpage: true,
+      loadSidebar: true,
+      mergeNavbar: true,
+      subMaxLevel: 2,
+      name: '',
+      repo: '',
+      ga: 'UA-XXXXX-Y',
+      // 复制到剪贴板
+      copyCode: {
+        buttonText: {
+          '/': '点击复制'
+        },
+        errorText: {
+          '/': '错误'
+        },
+        successText: {
+          '/': '复制成功'
+        }
+      },
+      // 完整配置参数
+      search: {
+        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+        paths: 'auto', // or 'auto'
+        // 支持本地化
+        placeholder: {
+          '/': '搜索'
+        },
+
+        // 支持本地化
+        noData: {
+          '/': '找不到结果'
+        },
+
+        // 搜索标题的最大程级, 1 - 6
+        depth: 3
+      }
+    }
+  </script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/ga.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/emoji.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+  <script src="https://unpkg.com/docsify-copy-code@2"></script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "fe-program-tips",
+  "version": "0.1.0",
+  "description": "program tips",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "docsify start ./docs"
+  },
+  "author": "",
+  "license": "ISC"
+}
