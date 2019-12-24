@@ -1,5 +1,5 @@
 function install(hook, vm) {
-    const dom = Docsify.dom
+    const dom = Docsify.dom;
 
     hook.afterEach((html) => {
         const main = dom.getNode('#main');
@@ -12,8 +12,11 @@ function install(hook, vm) {
         while (el.hasChildNodes()) {
             el.removeChild(el.firstChild)
         }
-        const contentBody = dom.getNode('#article-wrappe').innerHTML;
-        // console.log('xxx', document.title, contentBody);
+        const contentBody = document.getElementById(DOCSIFY.ID_CONTENT).innerHTML;
+        if (DOCSIFY.IS_DEBUG) {
+            console.log('current title:', document.title);
+            console.log('contentBody:', contentBody);
+        }
         // 初始化 gitalk
         const gitalk = new Gitalk({
             clientID: '23a07f304b5bc80b9da2',
