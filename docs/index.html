@@ -42,10 +42,11 @@
   height: 0;
   margin: 8px;
   box-sizing: border-box;
-  border: 32px solid #42b983;
-  border-color: #42b983 transparent #42b983 transparent;
+  border: 32px solid var(--theme-color);
+  border-color: var(--theme-color) transparent var(--theme-color) transparent;
   animation: lds-hourglass 1.2s infinite;
 }
+
 @keyframes lds-hourglass {
   0% {
     transform: rotate(0);
@@ -59,6 +60,29 @@
     transform: rotate(1800deg);
   }
 }
+.gt-container a, .gt-container .gt-header-controls-tip, .gt-container .gt-btn-preview{
+  color: var(--theme-color);
+}
+.gt-container .gt-link{
+  border-bottom-color:var(--theme-color);
+}
+.gt-container .gt-btn{
+  background-color: var(--theme-color);
+  border-color: var(--theme-color);
+}
+.gt-container .gt-btn-preview {
+    background-color: #fff;
+}
+.gt-container .gt-btn-preview:hover{
+  border-color: var(--theme-color);
+}
+.gt-container .gt-svg svg{
+  fill: var(--theme-color);
+}
+.gt-container a:hover{
+  color: #DBD5B2;
+}
+
 </style>
 <body>
   <div id="app"><div class="lds-hourglass"></div></div>
@@ -72,6 +96,7 @@
       name: '',
       repo: '',
       ga: 'UA-69473481-3',
+      repo: 'boycgit/fe-program-tips',
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md'
       },
