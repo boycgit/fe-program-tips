@@ -131,6 +131,10 @@
   <script src="./assets/plugins/image-url-replace.js"></script>
   <script src="./assets/plugins/footer.js"></script>
 
-
+  <script>
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('sw.js')
+    }
+  </script>
 </body>
 </html>
