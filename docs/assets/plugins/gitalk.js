@@ -3,7 +3,7 @@ function install(hook, vm) {
 
     hook.afterEach((html) => {
         const main = dom.getNode('#main');
-        const gitTalkConent = `<div id="gitalk-container" style="width: ${main.clientWidth}px; margin: 0 auto 20px;"></div>`
+        const gitTalkConent = `<div id="gitalk-container" style="width: 100%; margin: 0 auto 20px;"></div>`
         return html + gitTalkConent
     });
 
