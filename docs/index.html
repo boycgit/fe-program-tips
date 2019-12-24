@@ -7,6 +7,7 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
   
 </head>
 <style>
@@ -60,6 +61,8 @@
 </style>
 <body>
   <div id="app"><div class="lds-hourglass"></div></div>
+  <div id="gitalk-container"></div>
+
   <script>
     window.$docsify = {
       coverpage: true,
@@ -118,5 +121,21 @@
   <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
   <script src="https://unpkg.com/docsify-copy-code@2"></script>
   <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
+  <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script>
+    const gitalk = new Gitalk({
+      clientID: '23a07f304b5bc80b9da2',
+      clientSecret: 'ee28eb5e64c8795c8d38765d9ed4587578fcb377',
+      repo: 'fe-program-tips',
+      owner: 'boycgit',
+      admin: ['boycgit'],
+      id: location.hash.replace('#/', ''),
+      // facebook-like distraction free mode
+      distractionFreeMode: false
+    });
+    gitalk.render('gitalk-container');
+  </script>
+
 </body>
 </html>

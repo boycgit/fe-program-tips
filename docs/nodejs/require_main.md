@@ -15,18 +15,16 @@
 
 Node.js 官网 “[Accessing the main module](https://nodejs.org/api/modules.html#modules_accessing_the_main_module)” 中有言：
 
-![require.main](https://raw.githubusercontent.com/boycgit/web-image/master/blog20191219200623.png)
+![require.main](../images/blog20191219200623.png)
 
 简单翻译一下就是：
 **可以通过 `require.main === module` 来判断当前文件是否直接被 node.js 执行，比如对 `foo.js` 文件，如果你执行了 `node foo.js`，那么这个条件语句结果是 `true`，如果是被其他文件以 `require('./foo')` 引用则为 `false`**
 
 这个 `require.main === module` 判断语句，经常用在代码演示中（或者自测），比如我最近正在看 [loopback-next/context example 代码](https://github.com/strongloop/loopback-next/blob/master/examples/context/src/) 中的每个 js 文件文末最后都会有这样的代码：
 
-![require.main](https://raw.githubusercontent.com/boycgit/web-image/master/blog20191217194932.png)
+![require.main](../images/blog20191217194932.png)
 
 这就是为了用户可以方便单个直接执行该文件时（调用文件内定义的 `main` 函数）的运行输出结果。
-
-
 
 
 ### 参考文章
