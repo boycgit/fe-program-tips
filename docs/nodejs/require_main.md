@@ -1,8 +1,11 @@
-## 第 1 期 - require.main === module {docsify-ignore}
+## 第 1 期 - require.main === module {docsify-ignore-all}
 
+![title](../images/title-tips1.png)
 
+## 视频讲解
 [视频讲解](//player.bilibili.com/player.html?aid=80554200&cid=137855798&page=1 ':include :type=iframe width=100% height=480px')
 
+## 文字内容
 ### 1、本期 Tip 内容
 今天要学习的是 **Node.js** 的 tips，是关于 `require.main === module` 这个条件判断语句的用处。
 
