@@ -3,7 +3,7 @@
 ![title](../images/title-tips1.png)
 
 ## 视频讲解
-[视频讲解](//player.bilibili.com/player.html?aid=80554200&cid=137855798&page=1 ':include :type=iframe width=100% height=480px')
+<iframe class="article-video" src="//player.bilibili.com/player.html?aid=80554200&cid=137855798&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 ## 文字内容
 ### 1、本期 Tip 内容
