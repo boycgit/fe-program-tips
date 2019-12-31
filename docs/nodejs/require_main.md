@@ -1,4 +1,4 @@
-## 第 1 期 - require.main === module {docsify-ignore-all}
+## 第 1 期 - `require.main === module`的使用 {docsify-ignore-all}
 
 ![title](../images/title-tips1.png)
 
@@ -18,7 +18,7 @@
 
 Node.js 官网 “[Accessing the main module](https://nodejs.org/api/modules.html#modules_accessing_the_main_module)” 中有言：
 
-![require.main](../images/blog20191219200623.png)
+![Node.js 官网对 require.main 的解释](../images/blog20191219200623.png)
 
 简单翻译一下就是：
 **可以通过 `require.main === module` 来判断当前文件是否直接被 node.js 执行，比如对 `foo.js` 文件，如果你执行了 `node foo.js`，那么这个条件语句结果是 `true`，如果是被其他文件以 `require('./foo')` 引用则为 `false`**
@@ -63,7 +63,7 @@ if(require.main === module) {
 
 这样其他模块引入当前 `plus.js` 模块后就不会执行这条测试语句了。
 
-> 本例代码可前往 [这儿](https://github.com/boycgit/fe-program-tips/src/1-require.main/plus.js) 获取
+> 本例代码可前往 [这儿](https://github.com/boycgit/fe-program-tips/blob/master/src/1-require.main/plus.js) 获取
 
 
 该技巧经常用在代码演示中（或者自测），比如我最近正在看 [loopback-next/context example 代码](https://github.com/strongloop/loopback-next/blob/master/examples/context/src/) 中的每个 js 文件文末最后都会有这样的代码：
