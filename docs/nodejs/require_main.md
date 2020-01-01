@@ -1,11 +1,9 @@
 ## 第 1 期 - `require.main === module`的使用 {docsify-ignore-all}
 
-![title](../images/title-tips1.png)
-
 ## 视频讲解
 <iframe class="article-video" src="//player.bilibili.com/player.html?aid=80554200&cid=137855798&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
-## 文字内容
+## 文字讲解
 ### 1、本期 Tip 内容
 今天要学习的是 **Node.js** 的 tips，是关于 `require.main === module` 这个条件判断语句的用处。
 

@@ -1,21 +1,30 @@
 ## 第 2 期 - 将 arguments 转换成数组的最佳实践 {docsify-ignore-all}
 
-![title](../images/title-tips2.png)
-
 ## 视频讲解
-<iframe class="article-video" src="//player.bilibili.com/player.html?aid=80554200&cid=137855798&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe class="article-video" src="//player.bilibili.com/player.html?aid=81684736&cid=139770298&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
-## 文字内容
+## 文字讲解
 
-### 先讲结论
+### 1、先讲结论
 
-如果你想将 arguments 转换成数组，最好的方式是使用 **rest** 参数转换的方式（即使用 `...` spread 操作符）。
+有很多种方式将 arguments 转换成数组，那么哪一种方式是最优的？
+
+为节约大伙儿的时间，这里先说一下结论：如果你想将 arguments 转换成数组，最好的方式是使用 **rest** 参数转换的方式（即使用 `...` spread 操作符），比如：
+
+```js
+function test(…args) {
+   console.log(args)
+}
+test(1,2,3); // [1,2,3]
+```
+
+原因是：性能是 **最优** 的，可读性也挺好。
 
 想知道为什么的话，可以继续往下看。
 
-### 1、本期 Tip 内容
+### 2、原因分析
 
-`arguments` 对象是所有（非箭头）函数中都可用的局部变量，它是一个 “Array-Like” 对象，即 “像数组的对象”的意思，有些文章中也会翻译成 “伪数组对象”。（可以按索引取值、具有 `length` 属性，但不一定具备数组 `push`、`concat` 等方法，具体可参考文章[伪数组(ArrayLike)](https://segmentfault.com/a/1190000015285969)内容）
+`arguments` 对象是所有（非箭头）函数中都可用的局部变量，它是一个 “Array-Like” 对象，即 “像数组的对象”的意思，有些文章中也会翻译成 “伪数组对象”。（可以按索引取值、具有 `length` 属性，但不一定具备 `push`、`concat` 等数组方法，具体可参考文章[伪数组(ArrayLike)](https://segmentfault.com/a/1190000015285969)内容）
 
 !> 注意：**箭头函数中并不存在 `arguments` 对象**
 
@@ -32,7 +41,7 @@
 
 接下来我们就用基准测试（Benchmark）的方式来量化上述那种方式性能更好。
 
-### 2、性能测试
+### 3、性能测试
 
 在《[做好准备：新的V8即将发布，Node 的性能正在改变](https://www.zcfy.cc/article/get-ready-a-new-v8-is-coming-node-js-performance-is-changing)》文中给了结论：
 
@@ -57,20 +66,24 @@
 2. 更加灵活，接收参数的数量完全自定义。
 3. 可读性更好，参数都是在函数括号中定义的，不会突然出现一个arguments，显得很突兀。
 
-### Q & A
+### 4、Q & A
 
 在这里我简单解答一些常见的疑惑：
 
 Q: **为什么需要将 `arguments` 对象转换成数组？**
-A: 答案也简单，因为 Array 实例提供了很多数组方法，比如 `.push`、`.concat` 等，提供了更多数据操作方式，转换成数组就是为了方便操作入参数据。
+
+A: 答案也简单，因为 Array 实例提供了很多数组方法，比如 `.push`、`.concat` 等，提供了更多数据操作方式，归根到底，转换成数组就是为了方便操作数据。
 
 Q: **既然经常要将 `arguments` 转换成数组，为什么最初不把 `arguments` 设计成数组格式呢？**
+
 A: 按照文章 《[JavaScript arguments 对象全面介绍](https://zhuanlan.zhihu.com/p/23007032)》所言， `arguments` 在语言的早期就引入了，当时的 Array 对象具有 4 个方法： `toString`、 `join`、 `reverse` 和 `sort`。`arguments` 继承于 Object 的很大原因是不需要这四个方法。（当时设计的人也不知道后续的发展会对 `arguments` 有这方面的强需求...变化无处不在..）
 
 Q: **为什么需要 `Array-Like` 对象（伪数组对象）的存在？**
-A: 前面说了，转换成数组也是为了提供更多数据操作方式；其实 `Array-Like` 对象的存在，其实也是为了给数据提供更多的操作方式，因为可以在对象上可以挂载很多 **自定义** 的操作方法，使用起来灵活度会很高。
+
+A: 前面说了，转换成数组也是为了提供更多数据操作方式；其实 `Array-Like` 对象的存在，也是为了给数据提供更多的操作的可能，因为可以在对象上挂载很多 **自定义** 的操作方法，使用起来灵活度会很高。
 
 Q: **上述讨论的数组转换结果，是否也适应于其他 “伪数组对象”？**
+
 A: 因为 `arguments` 也是“伪数组对象”，不难推而广之，上面讨论的数组转换的方式都可以应用在“伪数组对象”上；至于每个转换方法的性能如何，我因为没有单独去测试过，所以也不能妄下定论，大家可以自己写 benchmark 去测试一下（个人猜测应该结论也差不多）。
 
 ### 3、参考文章
