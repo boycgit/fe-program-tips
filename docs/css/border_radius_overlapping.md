@@ -1,7 +1,7 @@
 ## 第 3 期 - 简写的 border-radius 100% 和 50% 是等效的 {docsify-ignore-all}
 
 ## 视频讲解
-<iframe class="article-video" src="//player.bilibili.com/player.html?aid=81684736&cid=139770298&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe class="article-video" src="//player.bilibili.com/player.html?aid=82639410&cid=141392003&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 ## 文字讲解
 
@@ -10,8 +10,6 @@
 `border-radius` 这个 css 属性大家应该使用得非常娴熟，现实中用到的场景基本都是四个圆角一致的情况。
 
 比如实现一个圆形按钮，其中 `border-radius` 数值有些人写为 `50%`，有些人则写成 `100%`，不过你会发现两者效果是一样的：
-
-![result](https://raw.githubusercontent.com/boycgit/web-image/master/20200107000313.png)
 
 > 测试 HTML 代码如下：
 ```html
@@ -36,13 +34,20 @@
 ">100%</div>
 ```
 
+![result](https://img.alicdn.com/tfs/TB191yftrr1gK0jSZFDXXb9yVXa-246-129.png)
+
 其实不论是 `50%` 还是 `100%`，只要将 `border-radius` 设置成 `x%`，且 `x >= 50` 都能获得和 `50%` 一样的效果。
 
 如果不知道其中的原因，可以继续往下看。
 
 ### 2、原因分析
 
-原因也很简单，因为这是 `border-radius` 的标准说起，在[`border-radius` 标准中 Overlapping Curves 章节](https://drafts.csswg.org/css-backgrounds-3/#corner-overlap)里，有这么一段话：
+第 1 个知识点是 `border-radius` 的写法，最全的写法是这样的，记住这张图就行：
+![示意图](https://img.alicdn.com/tfs/TB1W8Zytoz1gK0jSZLeXXb9kVXa-859-676.png)
+
+> 详细教程可参考《[CSS Border-Radius Can Do That?](https://medium.com/9elements/css-border-radius-can-do-that-d46df1d013ae)》
+
+第 2 个知识点是 `border-radius` 的标准，在[`border-radius` 标准中 Overlapping Curves 章节](https://drafts.csswg.org/css-backgrounds-3/#corner-overlap)里，有这么一段话：
 
 ![曲线重叠](https://raw.githubusercontent.com/boycgit/web-image/master/20200108002817.png)
 
@@ -54,19 +59,15 @@
 
 这两端的椭圆半轴长度设置值之和存在两者情况：
  - 设置值加起来不超过 100%，那么大伙儿各自安好，互不干扰；
- - 设置值加起来超过 100%，那需要按比例重新划分：比如一个设置 100%，一个设置成 300%，加起来就 400% 了（超过 100% 了） —— 那么实际上一个真正分得长度的 1/4，另一个真正分得长度的 3/4；
+ - 设置值加起来如果超过 100%，那需要按比例重新划分：比如一个设置 100%，一个设置成 300%，加起来就 400% 了（超过 100% 了） —— 那么实际上一个真正分得长度的 1/4，另一个真正分得长度的 3/4；
 
-【附带图】
+结合 **知识点 1** 和 **知识点 2** 就能得到文章最开始的结论了。
 
 ### 3、小工具 + 小练习
 
-这里推荐一篇文章：先看一下 `boder-radius` 最全的写法是这样的，记住这张图：
-![示意图](http://images.shejidaren.com/wp-content/uploads/2018/10/0352141cD.jpg)
+如果对 `border-radius` 的写法不太熟也没关系，有个[在线工具](https://9elements.github.io/fancy-border-radius/)可以帮你更好的理解。
 
-记不住也没关系，有个在线工具可以帮你更好的理解
-
-
-另外，最近看到使用一个 div + `border-radius` 实现以下 “转动的太极图”，大伙儿可以练习一下：
+另外，最近看到使用单个 div + `border-radius` 实现以下 “转动的太极图”，大伙儿可以练习一下：
 
 ![太极图](../images/taiji.gif)
 
