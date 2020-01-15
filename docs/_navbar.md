@@ -1,3 +1,1 @@
 - [技术博客](https://boycgit.github.io/)
-- Tips类别
-  - [nodejs](/nodejs/intro.md)
