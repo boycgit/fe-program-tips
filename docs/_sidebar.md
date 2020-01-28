@@ -5,5 +5,6 @@
   - [#4 用 process.hrtime 获取纳秒级的计时精度](/nodejs/process_hrtime.md)
 - **JavaScript**
   - [#2 将 arguments 转换成数组的最佳实践](/javascript/arguments_to_array.md)
+  - [#5 将异步函数 promise 化](/javascript/promisify.md)
 - **CSS**
   - [#3 简写的 border-radius 100% 和 50% 是等效的](/css/border_radius_overlapping.md)
