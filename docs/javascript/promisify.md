@@ -1,7 +1,7 @@
 ## 第 5 期 - 将异步函数 promise 化 {docsify-ignore-all}
 
 ## 视频讲解
-<iframe class="article-video" src="" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe class="article-video" src="//player.bilibili.com/player.html?aid=91187805&cid=155708491&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 ## 文字讲解
 
