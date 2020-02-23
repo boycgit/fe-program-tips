@@ -5,7 +5,7 @@
 
 ## 文字讲解
 
-本期学习一则代码片段，用于 **将异步函数 promise 化*
+本期学习一则代码片段，用于 **将异步函数 promise 化**
 
 > 为什么需要 promise 化？可参考 [promise 的优缺点？](https://github.com/es6-org/exploring-es6/blob/master/md/24.10.md)
 
