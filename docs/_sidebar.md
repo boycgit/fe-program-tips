@@ -6,5 +6,6 @@
 - **JavaScript**
   - [#2 将 arguments 转换成数组的最佳实践](/javascript/arguments_to_array.md)
   - [#5 将异步函数 promise 化](/javascript/promisify.md)
+  - [#6 在 async iterator 上使用 for-await-of 语法糖](/javascript/async_iterator.md)
 - **CSS**
   - [#3 简写的 border-radius 100% 和 50% 是等效的](/css/border_radius_overlapping.md)
