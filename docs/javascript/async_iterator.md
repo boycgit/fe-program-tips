@@ -1,7 +1,7 @@
 ## 第 6 期 - 在 async iterator 上使用 for-await-of 语法糖 {docsify-ignore-all}
 
 ## 视频讲解
-<iframe class="article-video" src="//player.bilibili.com/player.html?aid=81684736&cid=139770298&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe class="article-video" src="//player.bilibili.com/player.html?aid=95063109&cid=162283777&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 ## 文字讲解
 
