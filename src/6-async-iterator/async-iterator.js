@@ -1,4 +1,4 @@
-const delay = (time) => (cb) => setTimeout(() => { console.log(time); cb && cb(); }, time * 1000);
+const delay = (time) => (cb) => setTimeout(() => { console.log(time);  cb && cb();}, time * 1000);
 
 const delays = [delay(3), delay(2), delay(4)];
 
