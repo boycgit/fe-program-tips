@@ -1,4 +1,4 @@
-## 第 6 期 - 在 async iterator 上使用 for-await-of 语法糖 {docsify-ignore-all}
+## 第 7 期 - 用 6 行代码实现文本复制 {docsify-ignore-all}
 
 ## 视频讲解
 
